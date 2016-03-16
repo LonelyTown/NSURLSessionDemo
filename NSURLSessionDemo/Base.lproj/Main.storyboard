@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,76 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FNb-Ih-jJ1">
+                                <rect key="frame" x="0.0" y="179" width="600" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="9lZ-Jq-Z2d"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JNA-Wi-bKd">
+                                <rect key="frame" x="0.0" y="468" width="600" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-Ag-iLF">
+                                <rect key="frame" x="21" y="550" width="45" height="30"/>
+                                <state key="normal" title="cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZMP-Gp-FAF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RD-WX-4UI">
+                                <rect key="frame" x="275" y="550" width="51" height="30"/>
+                                <state key="normal" title="resume"/>
+                                <connections>
+                                    <action selector="resumeButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LTU-cC-YPh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2V-vl-ygu">
+                                <rect key="frame" x="536" y="550" width="42" height="30"/>
+                                <state key="normal" title="pause"/>
+                                <connections>
+                                    <action selector="pauseButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="svh-Or-fAe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnT-TM-XJR">
+                                <rect key="frame" x="21" y="496" width="559" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Zgj-l3-9k7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FNb-Ih-jJ1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2La-wv-9lf"/>
+                            <constraint firstItem="JNA-Wi-bKd" firstAttribute="centerX" secondItem="qnT-TM-XJR" secondAttribute="centerX" id="3Fq-TL-w8b"/>
+                            <constraint firstItem="JNA-Wi-bKd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4nf-wc-LgZ"/>
+                            <constraint firstItem="r2V-vl-ygu" firstAttribute="baseline" secondItem="4RD-WX-4UI" secondAttribute="baseline" id="6Bs-zg-EBQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r2V-vl-ygu" secondAttribute="trailing" constant="2" id="6SG-Fc-1Sh"/>
+                            <constraint firstItem="JNA-Wi-bKd" firstAttribute="trailing" secondItem="FNb-Ih-jJ1" secondAttribute="trailing" id="9wI-X2-lQv"/>
+                            <constraint firstItem="qnT-TM-XJR" firstAttribute="centerX" secondItem="4RD-WX-4UI" secondAttribute="centerX" id="IfF-Ib-9gJ"/>
+                            <constraint firstItem="hzP-Ag-iLF" firstAttribute="top" secondItem="qnT-TM-XJR" secondAttribute="bottom" constant="33" id="Mng-wr-WJS"/>
+                            <constraint firstAttribute="bottom" secondItem="hzP-Ag-iLF" secondAttribute="bottom" constant="20" symbolic="YES" id="RbK-e0-M7U"/>
+                            <constraint firstAttribute="trailing" secondItem="JNA-Wi-bKd" secondAttribute="trailing" id="Ski-xF-54V"/>
+                            <constraint firstItem="qnT-TM-XJR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Udb-H4-f0r"/>
+                            <constraint firstItem="JNA-Wi-bKd" firstAttribute="leading" secondItem="FNb-Ih-jJ1" secondAttribute="leading" id="b6d-Jd-Vuk"/>
+                            <constraint firstItem="qnT-TM-XJR" firstAttribute="leading" secondItem="hzP-Ag-iLF" secondAttribute="leading" id="gO6-Ud-TMq"/>
+                            <constraint firstItem="JNA-Wi-bKd" firstAttribute="top" secondItem="FNb-Ih-jJ1" secondAttribute="bottom" constant="47" id="i3R-sA-uoG"/>
+                            <constraint firstItem="hzP-Ag-iLF" firstAttribute="baseline" secondItem="4RD-WX-4UI" secondAttribute="baseline" id="joy-mi-0BU"/>
+                            <constraint firstItem="qnT-TM-XJR" firstAttribute="top" secondItem="JNA-Wi-bKd" secondAttribute="bottom" constant="26" id="kA3-EI-lAU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="FNb-Ih-jJ1" id="7e7-I6-AdD"/>
+                        <outlet property="progressLabel" destination="qnT-TM-XJR" id="OQy-1V-9kx"/>
+                        <outlet property="progressView" destination="JNA-Wi-bKd" id="Xw2-rY-hvw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="356" y="316"/>
         </scene>
     </scenes>
 </document>
