@@ -87,6 +87,14 @@ static NSString *urlStr = @"http://f12.topit.me/o129/10129120625790e866.jpg";
 }
 
 #pragma mark - sessionDelegate
+/**
+ *  接收到服务器的响应
+ *
+ *  @param session           <#session description#>
+ *  @param dataTask          <#dataTask description#>
+ *  @param response          <#response description#>
+ *  @param completionHandler <#completionHandler description#>
+ */
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{
     
     NSInteger length = [response expectedContentLength];
@@ -104,6 +112,13 @@ static NSString *urlStr = @"http://f12.topit.me/o129/10129120625790e866.jpg";
     
 }
 
+/**
+ *  接收到服务器返回的数据,会被调用多次
+ *
+ *  @param session  <#session description#>
+ *  @param dataTask <#dataTask description#>
+ *  @param data     <#data description#>
+ */
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data{
     [self.buffer appendData:data];
     //更新进度条
@@ -115,6 +130,13 @@ static NSString *urlStr = @"http://f12.topit.me/o129/10129120625790e866.jpg";
     });
 }
 
+/**
+ *  请求成功或者失败
+ *
+ *  @param session <#session description#>
+ *  @param task    <#task description#>
+ *  @param error   <#error description#>
+ */
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
     if (!error) {
         
